@@ -36,17 +36,20 @@ h3 {
 .container {
   max-width: 1140px;
   margin: auto;
+  padding-top: 30px;
 }
 
 @media (max-width: 768px) {
   .container {
     max-width: 600px;
+    padding-top: 30px;
   }
 }
 
 @media (max-width: 640px) {
   .container {
     padding: 0 50px;
+    padding-top: 30px;
   }
 }
 
@@ -71,7 +74,7 @@ header {
 }
 
 header nav {
-  height: 15vh;
+  height: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -89,7 +92,7 @@ header nav {
           align-items: center;
 }
 
-header nav ul {
+header nav .showL {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -105,16 +108,72 @@ header nav ul {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+header nav .showL li {
+  margin-left: 25px;
 }
 
 @media (max-width: 640px) {
-  header nav ul {
+  header nav .showL {
     display: none;
   }
 }
 
-header nav ul li {
-  margin-left: 25px;
+header nav .showL.active {
+  display: block;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  height: 20vh;
+  margin-top: 30px;
+  border-radius: 10px;
+  background: #ffffff;
+  z-index: 99;
+}
+
+header nav .showL.active a {
+  color: #000000;
+  font-size: 1.3rem;
+  padding: 10px;
+}
+
+header nav #showM {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  header nav #showM {
+    display: block;
+  }
+}
+
+@media (max-width: 640px) {
+  header nav .logo {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+  }
+  header nav .showM {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+  }
 }
 
 .info {
@@ -684,5 +743,6 @@ header nav ul li {
 .out {
   -webkit-filter: grayscale(100%);
           filter: grayscale(100%);
+  opacity: 0.6;
 }
 /*# sourceMappingURL=style.css.map */

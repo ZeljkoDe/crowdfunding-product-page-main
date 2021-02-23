@@ -69,11 +69,14 @@ h3 {
 .container {
   max-width: 1140px;
   margin: auto;
+  padding-top: 30px;
   @media (max-width: 768px) {
     max-width: 600px;
+    padding-top: 30px;
   }
   @media (max-width: 640px) {
     padding: 0 50px;
+    padding-top: 30px;
   }
 }
 .wrapper {
@@ -93,16 +96,45 @@ header {
   background-size: cover;
   background-repeat: no-repeat;
   nav {
-    height: 15vh;
+    height: auto;
     @include flex(row, space-between, center);
-    ul {
+    .showL {
       @include flex(row, space-between, center);
+      li {
+        margin-left: 25px;
+      }
       @media (max-width: 640px) {
         display: none;
       }
-      //   color: ;
-      li {
-        margin-left: 25px;
+      &.active {
+        display: block;
+        flex: 0 0 100%;
+        @include flex(column, center, flex-start);
+        height: 20vh;
+        margin-top: 30px;
+        border-radius: 10px;
+        background: $white;
+        z-index: 99;
+
+        a {
+          color: $black;
+          font-size: 1.3rem;
+          padding: 10px;
+        }
+      }
+    }
+    #showM {
+      display: none;
+      @media (max-width: 640px) {
+        display: block;
+      }
+    }
+    @media (max-width: 640px) {
+      .logo {
+        flex: 0 0 50%;
+      }
+      .showM {
+        flex: 0 0 50%;
       }
     }
   }
@@ -227,6 +259,7 @@ header {
   }
 }
 
+// about
 .about {
   @include sectionBg(-35px);
   text-align: left;
@@ -256,7 +289,6 @@ header {
         font-size: 1rem;
         color: $darkGray;
         font-weight: 400;
-        // vertical-align: super;
       }
     }
     button {
@@ -267,7 +299,6 @@ header {
       h3 {
         margin-bottom: 10px;
       }
-      // text-align: left;
       h2 {
         margin-bottom: 20px;
       }
@@ -275,6 +306,7 @@ header {
   }
 }
 
+// model
 .model {
   position: absolute;
   top: 20%;
@@ -390,6 +422,7 @@ header {
   }
 }
 
+// modal2
 .modalThanks {
   position: absolute;
   top: 10%;
@@ -416,6 +449,7 @@ header {
   }
 }
 
+// ovarlay
 .overlay {
   position: absolute;
   top: 0;
@@ -433,4 +467,5 @@ header {
 
 .out {
   filter: grayscale(100%);
+  opacity: 0.6;
 }

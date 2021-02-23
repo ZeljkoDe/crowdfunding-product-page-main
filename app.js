@@ -12,6 +12,12 @@ let backers = Number(document.getElementById('backers').textContent);
 const sum = 100000;
 const book = document.getElementById('book');
 
+const navToggle = document.querySelector('#showM');
+const links = document.querySelector('.showL');
+
+navToggle.addEventListener('click', function () {
+    links.classList.toggle('active');
+});
 
 book.addEventListener('click', function () {
     const gray = book.classList.toggle('out');
@@ -21,17 +27,9 @@ book.addEventListener('click', function () {
         document.getElementById('bookText').innerHTML = 'Bookmarked';
     }
 });
-// console.log(backers);
 
-// console.log(money);
-// console.log(sum);
 let result = money / sum * 100;
 bar.style.width = result + '%';
-// console.log(result);
-// input.forEach(function (item) {
-//     item.value;
-//     console.log(item);
-// });
 
 const card2 = document.querySelectorAll('.card2');
 model1.addEventListener('click', function (e) {
